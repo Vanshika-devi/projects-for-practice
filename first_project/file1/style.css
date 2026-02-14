@@ -1,0 +1,141 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0d1117; /* Dark GitHub-style background */
+    color: #e6edf3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Main Container (Flexbox) */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the whole website on wide screens */
+    width: 100%;
+}
+
+/* 3. Header: Logo on Left, Nav on Right */
+.logo-and-values {
+    display: flex;
+    justify-content: space-between; /* Pushes content to opposite ends */
+    align-items: center;            /* Vertical centering */
+    padding: 20px 40px;
+    border-bottom: 1px solid #30363d;
+}
+
+/* This group keeps the SQL image and the Title together on the left */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-and-values img {
+    height: 50px;           /* Controls the size of your SQL screenshot */
+    width: auto;            /* Maintains aspect ratio */
+    border-radius: 6px;
+    border: 1px solid #444;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1); /* Subtle 'hacker' glow */
+}
+
+.brand-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* 4. Navigation Styling */
+.values {
+    display: flex;          /* Links stay in a row */
+    list-style: none;
+    gap: 25px;
+}
+
+.values a {
+    text-decoration: none;
+    color: #8b949e;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.values a:hover {
+    color: #58a6ff;         /* Professional blue hover */
+}
+
+/* 5. Main Content Area */
+main {
+    flex: 1;                /* Grows to fill the space between header and footer */
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #58a6ff, #bc8cf2);
+    
+    /* Standard property first */
+    background-clip: text; 
+    
+    /* Vendor prefixes for browser support */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Fallback color for very old browsers */
+    color: #58a6ff; 
+}
+
+.paragraph {
+    max-width: 700px;
+    line-height: 1.6;
+    color: #8b949e;
+    font-size: 1.1rem;
+}
+
+/* 6. Footer & Button */
+footer {
+    padding: 40px;
+    border-top: 1px solid #30363d;
+}
+
+.submit-btn {
+    padding: 12px 28px;
+    background-color: #238636; /* Success green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #2ea043;
+    transform: translateY(-2px);
+}
+
+/* 7. Responsive Design (Overflow Prevention) */
+@media (max-width: 768px) {
+    .logo-and-values {
+        flex-direction: column; /* Stacks logo above nav on phones */
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .values {
+        flex-wrap: wrap;        /* Allows links to move to next line if screen is tiny */
+        justify-content: center;
+    }
+}
